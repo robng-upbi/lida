@@ -83,6 +83,7 @@ class Summarizer():
                     n_samples, random_state=42).tolist()
                 properties["samples"] = samples
             properties["num_unique_values"] = nunique
+            properties["has_nulls"] = True if df[column].isnull().any() else False
             properties["semantic_type"] = ""
             properties["description"] = ""
             properties_list.append(
