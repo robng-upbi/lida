@@ -29,6 +29,7 @@ class VizGenerator(object):
             {"role": "system", "content": system_prompt},
             {"role": "system", "content": f"The dataset summary is : {summary} \n\n"},
             library_instructions,
+            {"role": "system", "content": f"Translate chart parameters to match the title's language (when applicable). \n\n"},
             {"role": "user",
              "content":
              f"Always add a legend with various colors where appropriate. The visualization code MUST only use data fields that exist in the dataset (field_names) or fields that are transformations based on existing field_names). Only use variables that have been defined in the code or are in the dataset summary. You MUST return a FULL PYTHON PROGRAM ENCLOSED IN BACKTICKS ``` that starts with an import statement. DO NOT add any explanation. \n\n THE GENERATED CODE SOLUTION SHOULD BE CREATED BY MODIFYING THE SPECIFIED PARTS OF THE TEMPLATE BELOW \n\n {library_template} \n\n.The FINAL COMPLETED CODE BASED ON THE TEMPLATE above is ... \n\n"}]
