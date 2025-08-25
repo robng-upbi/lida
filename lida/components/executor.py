@@ -157,8 +157,10 @@ class ChartExecutor:
                     chart = ex_locals["chart"]
                     if plt:
                         buf = io.BytesIO()
-                        plt.box(False)
-                        plt.grid(color="lightgray", linestyle="dashed", zorder=-10)
+
+                        # plt.box(False)
+                        # plt.grid(color="lightgray", linestyle="dashed", zorder=-10)
+                        
                         # try:
                         #     plt.draw()
                         #     # plt.tight_layout()
