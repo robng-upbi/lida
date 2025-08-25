@@ -168,7 +168,8 @@ class ChartExecutor:
                         #     print("Warning: tight_layout encountered an error. The layout may not be optimal.")
                         #     pass
 
-                        plt.savefig(buf, format="png", dpi=100, pad_inches=0.2)
+                        # plt.savefig(buf, format="png", dpi=100, pad_inches=0.2)
+                        plt.savefig(buf, format="png", dpi=100, pad_inches=0.2, bbox_inches='tight')
                         buf.seek(0)
                         plot_data = base64.b64encode(buf.read()).decode("ascii")
                         plt.close()
