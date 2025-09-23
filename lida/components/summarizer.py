@@ -39,7 +39,11 @@ class Summarizer():
             properties = {}
             if dtype in [int, float, complex]:
                 properties["dtype"] = "number"
-                properties["std"] = self.check_type(dtype, df[column].std())
+
+                if df[column].shape[0] == 1:
+                    properties["std"] = self.check_type(dtype, df[column].std(ddof=0))
+                elif df[column].shape[0] > 0:
+                    properties["std"] = self.check_type(dtype, df[column].std())
                 properties["min"] = self.check_type(dtype, df[column].min())
                 properties["max"] = self.check_type(dtype, df[column].max())
 
