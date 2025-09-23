@@ -101,6 +101,7 @@ class Manager(object):
                 'Mercury Marauder 4dr',
                 'Toyota Prius 4dr (gas/electric)'],
                 'num_unique_values': 385,
+                'has_nulls': True,
                 'semantic_type': '',
                 'description': ''}},
             {'column': 'Type',
@@ -108,6 +109,7 @@ class Manager(object):
                 'samples': ['SUV', 'Minivan', 'Sports Car'],
                 'num_unique_values': 5,
                 'semantic_type': '',
+                'has_nulls': False,
                 'description': ''}},
             {'column': 'AWD',
             'properties': {'dtype': 'number',
@@ -116,6 +118,7 @@ class Manager(object):
                 'max': 1,
                 'samples': [1, 0],
                 'num_unique_values': 2,
+                'has_nulls': False,
                 'semantic_type': '',
                 'description': ''}},
             }
