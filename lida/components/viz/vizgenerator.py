@@ -43,7 +43,7 @@ class VizGenerator(object):
             4. Logical Ordering: Sort data logically (largest to smallest, chronological, alphabetical) to ease comparisons.
             5. Legend Positioning: Place legends on the right, unless design dictates otherwise.
 
-            Specific Guidelines by Chart Type:
+            Specific Guidelines by Chart Type (READ CAREFULLY, PAY ATTENTION TO EVERY SINGLE DETAIL, ESPECIALLY THE DIFFERENTIATORS):
 
             Bar Chart
 
@@ -53,7 +53,7 @@ class VizGenerator(object):
 
             1. Legend: For grouped/stacked bars, place legend on right. For single series, no legend needed; axis title suffices.
             2. Horizontal Bars: Use if labels are long to avoid unreadable rotation.
-            3. Differentiator: Compare totals across distinct, independent categories. Use bar chart if >5–6 categories; use pie chart if ≤5 categories.
+            3. Differentiator: Compare totals across distinct, independent categories. Use bar chart if >5 categories; use pie chart if ≤5 categories.
             * Examples:
             (Explicit) "Faça um gráfico de barras comparando a receita de cada unidade de negócio este ano."
             (Explicit) "Quero um gráfico de colunas que mostre o número de novos clientes adquiridos por cada campanha de marketing."
@@ -86,10 +86,9 @@ class VizGenerator(object):
             * Guidelines:
 
             1. Legend: Avoid separate box. Label slices directly with name and % (or thin line).
-            2. Use: Max 5–6 slices. If more, use bar chart.
-            3. Ordering: Order slices largest to smallest.
-            4. Start Position: Always start at 12 o'clock (matplotlib.pyplot.pie(startangle=90, counterclock=False)).
-            5. Differentiator: Focus on proportion, distribution, or composition.
+            2. Ordering: Order slices largest to smallest.
+            3. Start Position: Always start at 12 o'clock (matplotlib.pyplot.pie(startangle=90, counterclock=False)).
+            4. Differentiator: Focus on proportion, distribution, or composition. Only use if ≤5 categories. Otherwise, use bar chart.
             * Examples:
             (Explicit) "Crie um gráfico de pizza mostrando a distribuição de nossas vendas por região."
             (Explicit) "Quero um gráfico de rosca que detalhe a composição do nosso orçamento de P&D por projeto."
@@ -121,7 +120,7 @@ class VizGenerator(object):
             * Keywords/Triggers: Scatter plot triggers + "tamanho representando", "mostrando o volume de", "com a magnitude de".
             * Guidelines:
 
-            1. Legend: Must explain color (if 4th variable) and bubble size. Include 3–5 example bubbles with values.
+            1. Legend: Must always explain both color (if 4th variable) and bubble size. Include 3–5 example bubbles with values.
             2. Size Mapping: Map to bubble area, not radius.
             3. Differentiator: Correlation + third variable by size.
             * Examples:
@@ -156,7 +155,7 @@ class VizGenerator(object):
             * Guidelines:
 
             1. Legend: Continuous color bar (gradient), vertical on right. Title (e.g., "Sales Volume") + min/max labels.
-            2. Gradient: Intuitive scheme, light/cool (low) to dark/warm (high).
+            2. Gradient: Intuitive scheme, light/cool (low) to dark/warm (high). Don't use a colorcet palette here.
             3. Differentiator: Visualize intensity, density, or concentration.
             * Examples:
             (Explicit) "Gere um mapa de calor para mostrar os horários de maior atividade nos servidores."
