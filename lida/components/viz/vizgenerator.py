@@ -62,6 +62,25 @@ class VizGenerator(object):
             (Implicit) "Mostre-me um detalhamento do total de despesas por departamento."
             (Implicit) "Como a performance de vendas da Região Sul se compara com a da Região Nordeste?"
 
+            Pie/Doughnut Chart
+
+            * Ideal Use: Show composition of a whole, proportion of each category.
+            * Keywords/Triggers: "Porcentagem", "Distribuição", "Composição", "Fatia", "Participação", "Market share", "Proporção de", "Quebra por".
+            * Guidelines:
+
+            1. Legend: Avoid separate box. Label slices directly with name and % (or thin line).
+            2. Ordering: Order slices largest to smallest.
+            3. Start Position: Always start at 12 o'clock (matplotlib.pyplot.pie(startangle=90, counterclock=False)).
+            4. Avoid Axes: Do not include axes.
+            5. Differentiator: Focus on proportion, distribution, or composition. Only use if ≤5 categories. Otherwise, use bar chart.
+            * Examples:
+            (Explicit) "Crie um gráfico de pizza mostrando a distribuição de nossas vendas por região."
+            (Explicit) "Quero um gráfico de rosca que detalhe a composição do nosso orçamento de P&D por projeto."
+            (Implicit) "Qual a participação de cada sistema operacional (iOS, Android, Web) no total de acessos?"
+            (Implicit) "Mostre-me a quebra percentual de nossas fontes de receita."
+            (Implicit) "Qual é a fatia de mercado de cada um dos nossos concorrentes diretos?"
+            (Implicit) "Como nosso quadro de funcionários se distribui por nível de senioridade?"
+
             Line Chart
 
             * Ideal Use: Evolution of one or more continuous variables over time.
@@ -73,29 +92,8 @@ class VizGenerator(object):
             3. Differentiator: "Evolution" or "trend over time".
             * Examples:
             (Explicit) "Gere um gráfico de linha com a evolução da nossa base de assinantes nos últimos 24 meses."
-            (Explicit) "Poderia plotar um gráfico de linha com a cotação diária das nossas ações no último semestre?"
-            (Implicit) "Qual tem sido a tendência de satisfação do cliente (NPS) trimestre a trimestre?"
-            (Implicit) "Quero acompanhar o histórico de tickets de suporte abertos versus fechados, mês a mês."
             (Implicit) "Como o tráfego do nosso site variou ao longo do último ano?"
             (Implicit) "Mostre o crescimento da nossa receita recorrente mensal (MRR) desde o início do projeto."
-
-            Pie/Doughnut Chart
-
-            * Ideal Use: Show composition of a whole, proportion of each category.
-            * Keywords/Triggers: "Porcentagem", "Distribuição", "Composição", "Fatia", "Participação", "Market share", "Proporção de", "Quebra por".
-            * Guidelines:
-
-            1. Legend: Avoid separate box. Label slices directly with name and % (or thin line).
-            2. Ordering: Order slices largest to smallest.
-            3. Start Position: Always start at 12 o'clock (matplotlib.pyplot.pie(startangle=90, counterclock=False)).
-            4. Differentiator: Focus on proportion, distribution, or composition. Only use if ≤5 categories. Otherwise, use bar chart.
-            * Examples:
-            (Explicit) "Crie um gráfico de pizza mostrando a distribuição de nossas vendas por região."
-            (Explicit) "Quero um gráfico de rosca que detalhe a composição do nosso orçamento de P&D por projeto."
-            (Implicit) "Qual a participação de cada sistema operacional (iOS, Android, Web) no total de acessos?"
-            (Implicit) "Mostre-me a quebra percentual de nossas fontes de receita."
-            (Implicit) "Qual é a fatia de mercado de cada um dos nossos concorrentes diretos?"
-            (Implicit) "Como nosso quadro de funcionários se distribui por nível de senioridade?"
 
             Scatter Plot
 
@@ -108,11 +106,8 @@ class VizGenerator(object):
             3. Differentiator: Focus on relationship between two numeric variables.
             * Examples:
             (Explicit) "Faça um gráfico de dispersão para ver a correlação entre o tempo de resposta do suporte e a satisfação do cliente."
-            (Explicit) "Gere um scatter plot que relacione o custo de aquisição de cliente (CAC) com o lifetime value (LTV)."
             (Implicit) "Será que o preço de um produto influencia a sua nota de avaliação pelos clientes?"
             (Implicit) "Existe alguma relação entre a idade de um funcionário e sua pontuação em avaliações de desempenho?"
-            (Implicit) "Quero entender se o número de horas de treinamento de um vendedor afeta seu volume de vendas."
-            (Implicit) "Vamos analisar se há uma conexão entre o número de features em um software e a taxa de engajamento."
 
             Bubble Chart
 
@@ -125,11 +120,8 @@ class VizGenerator(object):
             3. Differentiator: Correlation + third variable by size.
             * Examples:
             (Explicit) "Gere um gráfico de bolhas mostrando custo vs. retorno, com o tamanho da bolha representando o investimento."
-            (Explicit) "Quero um bubble chart que compare receita e margem, onde o volume de vendas define o tamanho da bolha."
             (Implicit) "Mapeie nossos fornecedores: quero ver pedidos vs. tempo de entrega, e o valor total contratado deve ser representado pelo tamanho."
-            (Implicit) "Analise os projetos: mostre risco vs. retorno, e a dimensão da análise deve ser o orçamento alocado."
             (Implicit) "Compare canais de aquisição por usuários vs. conversão, e a magnitude da visualização deve ser o custo."
-            (Implicit) "Faça uma análise competitiva: posicione concorrentes por market share e crescimento, e use a receita para dimensionar a representação."
 
             Waterfall Chart
 
@@ -142,11 +134,8 @@ class VizGenerator(object):
             3. Differentiator: Explain journey from starting to ending value, showing contributions.
             * Examples:
             (Explicit) "Crie um gráfico de cascata que detalhe nosso fluxo de caixa, do saldo inicial ao final."
-            (Explicit) "Quero um waterfall chart para visualizar a decomposição do nosso EBITDA."
             (Implicit) "Mostre-me como o número de funcionários variou no último ano, detalhando contratações e desligamentos."
             (Implicit) "Explique a variação no nosso lucro do ano passado para este, mostrando os impactos positivos e negativos."
-            (Implicit) "Qual foi a jornada da nossa receita? Comece com a bruta e mostre o efeito de descontos e impostos."
-            (Implicit) "Detalhe a formação do preço final do produto. Comece com o custo e adicione as margens e impostos."
 
             Heatmap
 
@@ -159,11 +148,8 @@ class VizGenerator(object):
             3. Differentiator: Visualize intensity, density, or concentration.
             * Examples:
             (Explicit) "Gere um mapa de calor para mostrar os horários de maior atividade nos servidores."
-            (Explicit) "Preciso de um heatmap que mostre a correlação entre diferentes variáveis do nosso dataset."
             (Implicit) "Onde estão os pontos quentes de vendas na cidade? Quero ver a concentração por bairro."
             (Implicit) "Quais módulos do nosso software os usuários mais utilizam? Mostre uma matriz de intensidade de uso por tipo de cliente."
-            (Implicit) "Quero identificar padrões de compra. Analise quais categorias são compradas juntas, mostrando a força da associação."
-            (Implicit) "Onde os usuários mais clicam na homepage? Mostre as áreas de maior concentração de cliques."
             '''
             },
             {"role": "user",
